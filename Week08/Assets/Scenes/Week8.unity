@@ -1462,7 +1462,7 @@ MonoBehaviour:
   mRotationSpeed: 50
   mFollowCameraForward: 0
   mTurnRate: 500
-  mGravity: -30
+  mGravity: 30
   mJumpHeight: 1
 --- !u!114 &2145642071
 MonoBehaviour:

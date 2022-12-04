@@ -2429,7 +2429,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1063918958}
   - {fileID: 1329731348}
   - {fileID: 2116894071}
   - {fileID: 2132205175}
@@ -2439,6 +2438,7 @@ Transform:
   - {fileID: 1362753239}
   - {fileID: 718341691}
   - {fileID: 254356315}
+  - {fileID: 1063918958}
   - {fileID: 177586470}
   - {fileID: 384781863}
   - {fileID: 1368564033}
@@ -10701,7 +10701,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 727299353}
   - {fileID: 1200887654}
   - {fileID: 1355741323}
   - {fileID: 1260063168}
@@ -10729,6 +10728,7 @@ Transform:
   - {fileID: 1061717995}
   - {fileID: 1806452364}
   - {fileID: 763984494}
+  - {fileID: 727299353}
   - {fileID: 137044989}
   - {fileID: 2125421602}
   - {fileID: 461798524}
@@ -17176,10 +17176,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1338513481}
   - {fileID: 1891471677}
   - {fileID: 511601395}
   - {fileID: 291852082}
+  - {fileID: 1338513481}
   - {fileID: 113386015}
   - {fileID: 1010988216}
   - {fileID: 1592352710}
@@ -20992,13 +20992,13 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 564882398}
   - {fileID: 977489612}
   - {fileID: 318492437}
   - {fileID: 1953154895}
   - {fileID: 797192977}
   - {fileID: 1139400208}
   - {fileID: 1431325737}
+  - {fileID: 564882398}
   - {fileID: 30692098}
   - {fileID: 1930339007}
   - {fileID: 1139586974}
@@ -40563,7 +40563,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 969840548}
   - {fileID: 1491315539}
   - {fileID: 1739320796}
   - {fileID: 1515735151}
@@ -40584,6 +40583,7 @@ Transform:
   - {fileID: 178111727}
   - {fileID: 2856808}
   - {fileID: 800540421}
+  - {fileID: 969840548}
   - {fileID: 215877243}
   - {fileID: 622400777}
   - {fileID: 657271789}
@@ -40916,7 +40916,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1174084853}
   - {fileID: 231603598}
   - {fileID: 1170885494}
   - {fileID: 3583823}
@@ -40959,6 +40958,7 @@ Transform:
   - {fileID: 1775843506}
   - {fileID: 448800829}
   - {fileID: 308313938}
+  - {fileID: 1174084853}
   - {fileID: 110529138}
   - {fileID: 167012543}
   - {fileID: 335110514}
@@ -41478,7 +41478,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1344791019}
   - {fileID: 1251184156}
   - {fileID: 1020321058}
   - {fileID: 462120784}
@@ -41495,6 +41494,7 @@ Transform:
   - {fileID: 608608540}
   - {fileID: 554877743}
   - {fileID: 1918238374}
+  - {fileID: 1344791019}
   - {fileID: 108717199}
   - {fileID: 1324911741}
   - {fileID: 1175044949}
@@ -43037,7 +43037,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1514875288}
   - {fileID: 1555726551}
   - {fileID: 568382924}
   - {fileID: 239657084}
@@ -43073,6 +43072,7 @@ Transform:
   - {fileID: 1442927778}
   - {fileID: 151457102}
   - {fileID: 1991716175}
+  - {fileID: 1514875288}
   - {fileID: 375143862}
   - {fileID: 2050908045}
   - {fileID: 1557959557}
@@ -43950,8 +43950,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1028902750}
   - {fileID: 109131942}
+  - {fileID: 1028902750}
   - {fileID: 832317633}
   - {fileID: 1047414291}
   - {fileID: 1869582637}
@@ -49025,7 +49025,6 @@ Transform:
   m_LocalPosition: {x: 8.402921, y: 4.0191107, z: -10.73905}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1394398245}
   - {fileID: 1479582183}
   - {fileID: 2027358074}
   - {fileID: 1333203191}
@@ -49251,6 +49250,7 @@ Transform:
   - {fileID: 833689495}
   - {fileID: 2023109331}
   - {fileID: 459183072}
+  - {fileID: 1394398245}
   - {fileID: 92573063}
   - {fileID: 410956028}
   - {fileID: 528674543}
@@ -52014,7 +52014,7 @@ MonoBehaviour:
   mRotationSpeed: 50
   mFollowCameraForward: 0
   mTurnRate: 500
-  mGravity: -30
+  mGravity: 30
   mJumpHeight: 1
 --- !u!114 &2145642071
 MonoBehaviour:
