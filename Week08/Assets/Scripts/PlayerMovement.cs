@@ -35,13 +35,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        //HandleInputs();
-        //Move();
-    }
-
-    private void FixedUpdate()
-    {
-        ApplyGravity();
     }
 
     public void HandleInputs()
@@ -80,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private Vector3 moveDirection = Vector3.zero;
     public void Move()
     {
         if (crouch) return;
@@ -103,7 +97,9 @@ public class PlayerMovement : MonoBehaviour
         Vector3 forward = transform.TransformDirection(Vector3.forward).normalized;
         forward.y = 0.0f;
 
-        mCharacterController.Move(forward * vInput * speed * Time.deltaTime);
+        moveDirection.y -= mGravity * Time.deltaTime;
+
+        mCharacterController.Move(forward * vInput * speed * Time.deltaTime + moveDirection * Time.deltaTime);
         mAnimator.SetFloat("PosX", 0);
         mAnimator.SetFloat("PosZ", vInput * speed / (2.0f * mWalkSpeed));
 
@@ -136,13 +132,5 @@ public class PlayerMovement : MonoBehaviour
         {
             CameraConstants.CameraPositionOffset = tempHeight;
         }
-    }
-
-    void ApplyGravity()
-    {
-        // apply gravity.
-        mVelocity.y += mGravity * Time.deltaTime;
-        if (mCharacterController.isGrounded && mVelocity.y < 0)
-            mVelocity.y = 0f;
     }
 }
