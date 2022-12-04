@@ -31,12 +31,14 @@ public class Player : MonoBehaviour
   public LayerMask mPlayerMask;
   public Canvas mCanvas;
   public RectTransform mCrossHair;
-  //public AudioSource mAudioSource;
-  //public AudioClip mAudioClipGunShot;
-  //public AudioClip mAudioClipReload;
+    public AudioSource mAudioSourceFiring;
+    public AudioClip mFiringSound;
+    public AudioClip mReloadSound;
+    public AudioClip mNoAmmoSound;
 
+    Dictionary<AudioClip, bool> mSoundStatus = new Dictionary<AudioClip, bool>();
 
-  public GameObject mBulletPrefab;
+    public GameObject mBulletPrefab;
   public float mBulletSpeed = 10.0f;
 
   public int[] RoundsPerSecond = new int[3];
@@ -52,7 +54,11 @@ public class Player : MonoBehaviour
     mFsm.SetCurrentState((int)PlayerStateType.MOVEMENT);
 
     PlayerConstants.PlayerMask = mPlayerMask;
-  }
+
+        mSoundStatus.Add(mFiringSound, false);
+        mSoundStatus.Add(mReloadSound, false);
+        mSoundStatus.Add(mNoAmmoSound, false);
+    }
 
   void Update()
   {
@@ -179,9 +185,13 @@ public class Player : MonoBehaviour
   }
 
   public void NoAmmo()
-  {
+    {
+        if (mSoundStatus[mNoAmmoSound] == false)
+        {
+            StartCoroutine(Coroutine_PlayOneShot(mNoAmmoSound));
+        }
 
-  }
+    }
 
   public void Reload()
   {
@@ -192,8 +202,12 @@ public class Player : MonoBehaviour
   {
     yield return new WaitForSeconds(duration);
 
-    //mAudioSource.PlayOneShot(mAudioClipReload);
-  }
+        //mAudioSource.PlayOneShot(mAudioClipReload);
+        if (mSoundStatus[mReloadSound] == false)
+        {
+            StartCoroutine(Coroutine_PlayOneShot(mReloadSound));
+        }
+    }
 
   public void Fire(int id)
   {
@@ -214,7 +228,10 @@ public class Player : MonoBehaviour
         Quaternion.LookRotation(dir) * Quaternion.AngleAxis(90.0f, Vector3.right));
 
     bullet.GetComponent<Rigidbody>().AddForce(dir * mBulletSpeed, ForceMode.Impulse);
-    //mAudioSource.PlayOneShot(mAudioClipGunShot);
+    if(mSoundStatus[mFiringSound] == false)
+    {
+        StartCoroutine(Coroutine_PlayOneShot(mFiringSound));
+    }
   }
 
   IEnumerator Coroutine_Firing(int id)
@@ -225,4 +242,12 @@ public class Player : MonoBehaviour
     mFiring[id] = false;
     mBulletsInMagazine -= 1;
   }
+
+    IEnumerator Coroutine_PlayOneShot(AudioClip clip)
+    {
+        mSoundStatus[clip] = true;
+        mAudioSourceFiring.PlayOneShot(clip);
+        yield return new WaitForSeconds(clip.length);
+        mSoundStatus[clip] = false;
+    }
 }
