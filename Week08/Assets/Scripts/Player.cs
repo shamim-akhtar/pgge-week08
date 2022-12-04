@@ -31,10 +31,6 @@ public class Player : MonoBehaviour
   public LayerMask mPlayerMask;
   public Canvas mCanvas;
   public RectTransform mCrossHair;
-  //public AudioSource mAudioSource;
-  //public AudioClip mAudioClipGunShot;
-  //public AudioClip mAudioClipReload;
-
 
   public GameObject mBulletPrefab;
   public float mBulletSpeed = 10.0f;
@@ -191,8 +187,6 @@ public class Player : MonoBehaviour
   IEnumerator Coroutine_DelayReloadSound(float duration = 1.0f)
   {
     yield return new WaitForSeconds(duration);
-
-    //mAudioSource.PlayOneShot(mAudioClipReload);
   }
 
   public void Fire(int id)
@@ -214,7 +208,6 @@ public class Player : MonoBehaviour
         Quaternion.LookRotation(dir) * Quaternion.AngleAxis(90.0f, Vector3.right));
 
     bullet.GetComponent<Rigidbody>().AddForce(dir * mBulletSpeed, ForceMode.Impulse);
-    //mAudioSource.PlayOneShot(mAudioClipGunShot);
   }
 
   IEnumerator Coroutine_Firing(int id)
