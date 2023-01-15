@@ -38,6 +38,15 @@ public class Player : MonoBehaviour
   public int[] RoundsPerSecond = new int[3];
   bool[] mFiring = new bool[3];
 
+  [SerializeField]
+  AudioSource audioSource;
+  [SerializeField]
+  AudioClip shootingSoundClip;
+  [SerializeField]
+  AudioClip reloadSoundClip;
+  [SerializeField]
+  AudioClip noAmmoSoundClip;
+
 
   // Start is called before the first frame update
   void Start()
@@ -176,7 +185,7 @@ public class Player : MonoBehaviour
 
   public void NoAmmo()
   {
-
+    audioSource.PlayOneShot(noAmmoSoundClip);
   }
 
   public void Reload()
@@ -187,6 +196,8 @@ public class Player : MonoBehaviour
   IEnumerator Coroutine_DelayReloadSound(float duration = 1.0f)
   {
     yield return new WaitForSeconds(duration);
+
+    audioSource.PlayOneShot(reloadSoundClip);
   }
 
   public void Fire(int id)
@@ -208,6 +219,10 @@ public class Player : MonoBehaviour
         Quaternion.LookRotation(dir) * Quaternion.AngleAxis(90.0f, Vector3.right));
 
     bullet.GetComponent<Rigidbody>().AddForce(dir * mBulletSpeed, ForceMode.Impulse);
+
+    // randomize the volume.
+    audioSource.volume = Random.Range(0.4f, 0.8f);
+    audioSource.PlayOneShot(shootingSoundClip);
   }
 
   IEnumerator Coroutine_Firing(int id)

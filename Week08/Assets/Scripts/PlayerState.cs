@@ -169,7 +169,7 @@ public class PlayerState_ATTACK : PlayerState
         // in implementing this section.        
         
         // For tutor - start ---------------------------------------------//
-        Debug.Log("Ammo count: " + mPlayer.mAmunitionCount + ", In Magazine: " + mPlayer.mBulletsInMagazine);
+        //Debug.Log("Ammo count: " + mPlayer.mAmunitionCount + ", In Magazine: " + mPlayer.mBulletsInMagazine);
         if (mPlayer.mBulletsInMagazine == 0 && mPlayer.mAmunitionCount > 0)
         {
             mPlayer.mFsm.SetCurrentState((int)PlayerStateType.RELOAD);
